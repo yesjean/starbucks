@@ -84,7 +84,7 @@ fadeEls.forEach(function (fadeEl, index) {
 
 
 /**
- * 슬라이드 요소 관리
+ * 슬라이드 요소 관리 
  */
 new Swiper('.notice-line .swiper-container', {  //옵션을 객체데이터 형식으로 넣어준다 
   direction: 'vertical', // 수직 슬라이드
@@ -135,7 +135,7 @@ let isHidePromotion = false
 // 토글 버튼을 클릭하면,
 promotionToggleBtn.addEventListener('click', function () {
   // 슬라이드 영역 숨김 여부를 반댓값으로 할당!
-  isHidePromotion = !isHidePromotion
+  isHidePromotion = !isHidePromotion 
   // 요소를 숨겨야 하면,
   if (isHidePromotion) {
     promotionEl.classList.add('hide')
@@ -157,6 +157,7 @@ function random(min, max) {
 }
 // 부유하는(떠 다니는) 요소를 만드는 함수
 function floatingObject(selector, delay, size) {
+  //gsap.to(요소, 시간, 옵션);
   gsap.to(
     selector, // 선택자
     random(1.5, 2.5), // 애니메이션 동작 시간
@@ -165,7 +166,7 @@ function floatingObject(selector, delay, size) {
       y: size, // `transform: translateY(수치);`와 같음. 수직으로 얼마나 움직일지 설정.
       repeat: -1, // 몇 번 반복하는지를 설정, `-1`은 무한 반복.
       yoyo: true, // 한번 재생된 애니메이션을 다시 뒤로 재생.
-      ease: Power1.easeInOut // Easing 함수 적용.
+      ease: Power1.easeInOut // Easing 함수 적용. 느-빠-느
     }
   )
 }

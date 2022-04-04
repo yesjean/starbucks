@@ -445,7 +445,7 @@ header .badges .badge {
   z-index: 0;
 }
 .notice .promotion .swiper-pagination .swiper-pagination-bullet {
-  background-color: transparent;
+  background-color: transparent; /*배경색상 투명 : 배경색 사용 안함*/
   background-image: url("../images/promotion_slide_pager.png");
   width: 13px;
   height: 12px;
@@ -458,11 +458,11 @@ header .badges .badge {
 .notice .promotion .swiper-pagination .swiper-pagination-bullet-active {
   background-image: url("../images/promotion_slide_pager_on.png");
 }
-.notice .promotion .swiper-prev,
-.notice .promotion .swiper-next {
+.notice .promotion .swiper-prev, /*다중선택자는 줄바꿈을 꼭 해준다*/
+.notice .promotion .swiper-next { 
   width: 42px;
   height: 42px;
-  outline: none;
+  outline: none; /*포커스 됬을때 테두리에 파란선 ㄴㄴ*/
   border: 2px solid #333;
   border-radius: 50%;
   position: absolute;
@@ -599,7 +599,7 @@ header .badges .badge {
 .season-product .inner {
   height: 400px;
 }
-.season-product .floating3 {
+.season-product .floating3 {  /*유투브 영상 떠다니는 동그라미 세번째 요소*/
   position: absolute;
   top: -200px;
   right: 0;
@@ -684,34 +684,34 @@ header .badges .badge {
 .reserve-store .medal {
   width: 334px;
   height: 334px;
-  perspective: 600px;
+  perspective: 600px; /*원근거리 지정*/
 }
 .reserve-store .medal .front,
 .reserve-store .medal .back {
   width: inherit;
   height: inherit;
-  position: absolute;
-  transition: 1s;
-  backface-visibility: hidden;
+  position: absolute; /*앞 뒤 이미지 겹치게함.*/
+  transition: 1s; /*자연스럽게*/
+  backface-visibility: hidden; /*뒷면 숨김*/
 }
 .reserve-store .medal .front {
-  transform: rotateY(0deg);
+  transform: rotateY(0deg); /*명시적으로 0도에서 시작*/
 }
 .reserve-store .medal:hover .front {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg); /*마우스 올리면 뒤집음*/
 }
 .reserve-store .medal .back {
-  transform: rotateY(-180deg);
+  transform: rotateY(-180deg); /*뒤집기*/
 }
 .reserve-store .medal:hover .back {
-  transform: rotateY(0deg);
+  transform: rotateY(0deg); /*마우스 올리면 원래상태로 돌아옴*/
 }
 .reserve-store .medal .back .btn {
   position: absolute;
   top: 240px;
   left: 0;
   right: 0;
-  margin: auto;
+  margin: auto; /*가운데 정렬 가로너비는 btn에 지정되어있음*/
 }
 
 
@@ -873,7 +873,9 @@ footer .copyright {
 footer .logo {
   margin: 30px auto 0;
 }
-
+/*img 요소가 display: block; + margin: 0 auto인 경우 width 속성이 없어도
+가운데 정렬이 가능함.
+현재 프로젝트에서는 img요소에 display: block 을 지정함. */
 
 /*SCROLL TO TOP*/
 #to-top {
